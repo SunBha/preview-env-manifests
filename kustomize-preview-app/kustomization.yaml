@@ -7,4 +7,4 @@ resources:
 
 images:
 - name: docker.io/bhatiasunny/my-preview-app
-  newTag: 9a0ee05
+  newTag: ${SHORT_SHA}

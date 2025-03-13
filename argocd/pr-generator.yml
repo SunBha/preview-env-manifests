@@ -19,11 +19,11 @@ spec:
       requeueAfterSeconds: 180
   template:
     metadata:
-      name: 'myapp-{{.branch}}'
+      name: 'myapp-pr-{{.number}}'
     spec:
       source:
         repoURL: 'https://github.com/SunBha/preview-env-manifests.git'
-        targetRevision: HEAD
+        targetRevision: 'preview-pr-{{.number}}'
         path: kustomize-preview-app/ 
         kustomize:
           images:
@@ -31,10 +31,10 @@ spec:
       project: "default"
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'preview-{{.branch_slug}}'
+        namespace: 'preview-pr-{{.number}}'
       syncPolicy:
         automated:
           prune: true  
           selfHeal: true
         syncOptions:
-        - CreateNamespace=true 
+        - CreateNamespace=true
