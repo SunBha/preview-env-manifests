@@ -20,6 +20,6 @@ spec:
         - containerPort: 8080
         env:
         - name: GIT_BRANCH
-          value: "${PR_NUMBER}"
+          value: "default_kustomize_branch"
         - name: GIT_HASH
-          value: "${SHORT_SHA}"
+          value: "default_kustomize_hash"
