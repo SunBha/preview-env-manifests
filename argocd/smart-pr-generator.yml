@@ -12,11 +12,11 @@ spec:
         owner: sunbha
         repo: preview-env-source-code
       tokenRef:
-            secretName: argocd-token
-            key: token
+        secretName: argocd-token
+        key: token
       labels:
         - preview
-      requeueAfterSeconds: 60
+      requeueAfterSeconds: 180
   template:
     metadata:
       name: 'myapp-{{.branch}}'
