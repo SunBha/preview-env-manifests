@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
 - deployment.yml
 - service.yml
+
+images:
+- name: docker.io/bhatiasunny/my-preview-app
+  newTag: REPLACE_ME
