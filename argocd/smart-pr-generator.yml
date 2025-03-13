@@ -9,7 +9,7 @@ spec:
   generators:
   - pullRequest:
       github:
-        owner: kostis-codefresh
+        owner: sunbha
         repo: preview-env-source-code
       requeueAfterSeconds: 180
   template:
@@ -17,12 +17,12 @@ spec:
       name: 'myapp-{{.branch}}'
     spec:
       source:
-        repoURL: 'https://github.com/kostis-codefresh/preview-env-manifests.git'
+        repoURL: 'https://github.com/SunBha/preview-env-manifests.git'
         targetRevision: HEAD
         path: kustomize-preview-app/
         kustomize:
           images:
-            - 'docker.io/kostiscodefresh/my-preview-app:{{.head_short_sha_7}}'        
+            - 'docker.io/bhatiasunny/my-preview-app:{{.head_short_sha_7}}'        
           patches:
             - target:
                 kind: Deployment
